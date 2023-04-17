@@ -3,11 +3,12 @@ function playGame(playerChoice) {
 
   const selections = ["rock", "paper", "scissors"];
 
-  if (!selections.includes(playerChoice)) {
-    document.getElementById("game-result").textContent =
-      "Invalid selection. Please choose rock, paper, or scissors.";
-    return;
-  }
+  // if (!selections.includes(playerChoice)) {
+  //   console.log(!selections.includes(playerChoice));
+  //   document.getElementById("game-result").textContent =
+  //     "Invalid selection. Please choose rock, paper, or scissors.";
+  //   return;
+  // }
   const computerChoice =
     selections[Math.floor(Math.random() * selections.length)];
 
@@ -21,9 +22,9 @@ function playGame(playerChoice) {
     (playerChoice === "scissors" && computerChoice === "paper") ||
     (playerChoice === "paper" && computerChoice === "rock")
   ) {
-    result = "YOU WIN!" + playerChoice + " beats " + computerChoice;
+    result = "YOU WIN! " + playerChoice + " beats " + computerChoice;
   } else {
-    result = "YOU lose!" + computerChoice + " beats " + playerChoice;
+    result = "YOU lose! " + computerChoice + " beats " + playerChoice;
   }
 
   document.querySelector("#game-result").textContent = result;
